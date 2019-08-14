@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Entity.Landmarks" table="cities">
+        <id name="idlandmarks" type="java.lang.Long">
+            <column name="idlandmarks" />
+            <generator class="identity" />
+        </id>
+        <property name="namelandmarks" type="string">
+            <column name="namelandmarks" length="255" not-null="true" />
+        </property>
+        <property name="idcity" type="java.lang.Long">
+            <column name="idcity" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

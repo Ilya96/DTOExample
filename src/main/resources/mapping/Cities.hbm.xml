@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Entity.Cities" table="cities">
+        <id name="idcity" type="java.lang.Long">
+            <column name="idcity" />
+            <generator class="identity" />
+        </id>
+        <property name="namecity" type="string">
+            <column name="namecity" length="255" not-null="true" />
+        </property>
+        <set name="setOfLandmarks" table="landmarks"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcity" not-null="true" />
+            </key>
+            <one-to-many class="Entity.Landmarks" />
+        </set>
+    </class>
+</hibernate-mapping>
